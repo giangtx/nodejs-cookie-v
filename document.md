@@ -25,3 +25,8 @@
 * ## Cách phòng chống các cuộc tấn công CSRF
   Dựa trên nguyên tắc của CSRF “lừa trình duyệt của người dùng (hoặc người dùng) gửi các câu lệnh HTTP”, các kĩ thuật phòng tránh sẽ tập trung vào việc tìm cách phân biệt và hạn chế các câu lệnh giả mạo.
   * ### Phía server
+  #### Sử dụng thư viện csurf
+    * #### Cài đặt:
+  ```
+  $ npm install csurf
+  ```
