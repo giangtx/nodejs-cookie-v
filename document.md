@@ -41,11 +41,8 @@
 
   import testRouter from './routes/test';
 
+  //tạo express app
   const app = express();
-
-  // view engine setup
-  app.set('views', path.join(__dirname, 'views'));
-  app.set('view engine', 'ejs');
 
   app.use(logger('dev'));
   app.use(express.json());
@@ -53,6 +50,7 @@
   app.use(cookieParser());
   app.use(express.static(path.join(__dirname, 'public')));
 
+  //sử dụng router test
   app.use('/test', testRouter);
 
   // catch 404 and forward to error handler
@@ -74,17 +72,19 @@
   export default app;
   ```
     test.js
-    ```javascript
+  ```javascript
       import express from 'express';
       import csurf from 'csurf'
-
+      //cài đặt router middleware
       const csrfMiddleware = csurf({
           cookie: true
       })
-
+      
+      //tạo router
       const router = express.Router();
 
       router.get('/gettoken', csrfMiddleware, (request, response) => {
+          //trả về csrfToken 
           response.json({
               csrf: request.csrfToken()
           })
@@ -98,8 +98,7 @@
 
       export default router;
     ```
-  
-      * Như đã thấy ở trên ví dụ có 2 api:
+   Như đã thấy ở trên ví dụ có 2 api:
     
-        * '/test/gettoken': một GET api đơn giản chỉ trả về cookie xác thực
-        * '/test': một POST api trả về dữ liệu cho người dùng ở đây là message: 'chào bạn'
+     * '/test/gettoken': một GET api đơn giản chỉ trả về cookie xác thực
+     * '/test': một POST api trả về dữ liệu cho người dùng ở đây là message: 'chào bạn'
