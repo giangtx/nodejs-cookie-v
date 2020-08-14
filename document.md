@@ -39,7 +39,7 @@
   import cookieParser from 'cookie-parser';
   import logger from 'morgan';
 
-  import indexRouter from './routes/index';
+  import testRouter from './routes/test';
 
   const app = express();
 
@@ -53,7 +53,7 @@
   app.use(cookieParser());
   app.use(express.static(path.join(__dirname, 'public')));
 
-  app.use('/', indexRouter);
+  app.use('/test', testRouter);
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
@@ -98,3 +98,8 @@
 
       export default router;
     ```
+  
+      * Như đã thấy ở trên ví dụ có 2 api:
+    
+        * '/test/gettoken': một GET api đơn giản chỉ trả về cookie xác thực
+        * '/test': một POST api trả về dữ liệu cho người dùng ở đây là message: 'chào bạn'
