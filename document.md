@@ -27,6 +27,8 @@
   ### Giải pháp:
   Chúng ta cần đặt giá trị bổ xung(token) chuyển đến máy chủ để tăng tính xác thực của request
   * Khi người dùng truy cập trang web(app.com) lần đầu tiên, server sẽ đặt một SCRF cookie
+  * Cookie này chỉ được đọc bằng JavaScript code trên app.com
+  * Coolie cần được gửi trở lại server theo hai cách khác nhau: dưới dạng cookie và dưới dạng header. Việc thêm nó vào header là trách nhiệm của front-end và đảm bảo request là chính xác(không có mã bên ngoài nào có thể đặt đc request đó)
   ### Phía server(sử dụng thư viện csurf)
 
    * ### Cài đặt:
