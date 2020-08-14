@@ -24,9 +24,12 @@
   * Như vậy kẻ tấn công có thể thử dụng CSRF để chay bất cứ yêu cầu nào với trang web mà trang web không thể phân biệt được request nào là hợp pháp hay không.
 * ## Cách phòng chống các cuộc tấn công CSRF
   Dựa trên nguyên tắc của CSRF “lừa trình duyệt của người dùng (hoặc người dùng) gửi các câu lệnh HTTP”, các kĩ thuật phòng tránh sẽ tập trung vào việc tìm cách phân biệt và hạn chế các câu lệnh giả mạo.
-  * ### Phía server
-  #### Sử dụng thư viện csurf
-    * #### Cài đặt:
+  ### Giải pháp:
+  Chúng ta cần đặt giá trị bổ xung(token) chuyển đến máy chủ để tăng tính xác thực của request
+  * Khi người dùng truy cập trang web(app.com) lần đầu tiên, server sẽ đặt một SCRF cookie
+  ### Phía server(sử dụng thư viện csurf)
+
+   * ### Cài đặt:
   ```
   $ npm install csurf
   ```
