@@ -135,10 +135,8 @@
      * XSRF-TOKEN có thể sẽ được client gửi lại dưới dạng cookie (do cách thức hoạt động của cookie), nhưng server sẽ bỏ qua nó, vì nó sẽ chỉ tìm kiếm nó trong body, query string hoặc header trong mỗi request.
      * Mã tạo token(request.csrfToken()) chỉ nên được chạy một lần khi GET request '/' gốc chạy lần đầu tiên
      * ...
+     
    Tài liệu tham khảo:
-   
    https://medium.com/@d.silvas/how-to-implement-csrf-protection-on-a-jwt-based-app-node-csurf-angular-bb90af2a9efd
-   
    https://securitydaily.net/csrf-phan-1-nhung-hieu-ve-biet-chung-ve-csrf/
-   
    http://expressjs.com/en/resources/middleware/csurf.html
