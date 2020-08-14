@@ -137,6 +137,9 @@
      * ...
      
    Tài liệu tham khảo:
+   
    https://medium.com/@d.silvas/how-to-implement-csrf-protection-on-a-jwt-based-app-node-csurf-angular-bb90af2a9efd
+   
    https://securitydaily.net/csrf-phan-1-nhung-hieu-ve-biet-chung-ve-csrf/
+   
    http://expressjs.com/en/resources/middleware/csurf.html
